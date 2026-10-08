@@ -1,0 +1,133 @@
+/*
+  AI ATTRIBUTION: The visual styling in this file (colors, fonts, layout,
+  the blue-green-yellow background, and the highlighter effect on the
+  hero headline) was created with help
+  from Claude (Anthropic), an AI assistant, and then reviewed by me.
+*/
+
+:root {
+  --ink: #1f2a44;
+  --paper: #f7faf8;
+  --highlight: #f3db4f;
+  --graphite: #565e70;
+  --rule: rgba(31, 42, 68, 0.15);
+  --tile: rgba(255, 255, 255, 0.212);
+  --bg-blue: #c7b9f8;
+  --bg-green: #bfe9d0;
+  --bg-yellow: #a6a6f8;
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg-green);
+  /* Soft blue, green, and yellow blend that stays light enough for readable text */
+  background-image:
+    radial-gradient(ellipse at 0% 0%, var(--bg-blue) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, var(--bg-yellow) 0%, transparent 60%),
+    linear-gradient(135deg, var(--bg-blue) 0%, var(--bg-green) 50%, var(--bg-yellow) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0 0 0.5em; }
+a { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.site-main { flex: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* Header */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  max-width: 1080px; width: 100%; margin: 0 auto; padding: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+.cart-list, .why { background: rgba(255, 255, 255, 0.55); border-radius: 10px; }
+.why { padding: 2rem; border-top: none; }
+.cart-list { padding: 0 1.25rem; border-top: none; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 1.35rem; text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 1.5rem; }
+.site-nav a { text-decoration: none; font-weight: 500; }
+.site-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.cart-link { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 1.2rem; }
+.cart-count {
+  min-width: 1.6rem; padding: 0 0.4rem; border-radius: 999px;
+  background: var(--ink); color: var(--paper); font-size: 0.85rem; text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block; border: 2px solid var(--ink); background: var(--ink); color: var(--paper);
+  font: 600 0.95rem var(--body); padding: 0.6rem 1.1rem; border-radius: 6px;
+  cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: var(--paper); color: var(--ink); }
+.btn-large { padding: 0.8rem 1.5rem; font-size: 1.05rem; }
+.btn-quiet { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn-quiet:hover { border-color: var(--ink); }
+
+/* Home: the highlighter headline is the one bold element on the site */
+.hero { padding: 4.5rem 0 3.5rem; max-width: 46rem; }
+.hero-title { font-size: clamp(2.4rem, 6vw, 4.25rem); font-weight: 700; letter-spacing: -0.02em; }
+.highlight {
+  background: linear-gradient(transparent 58%, var(--highlight) 58%, var(--highlight) 92%, transparent 92%);
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.hero-text { font-size: 1.2rem; color: var(--graphite); max-width: 34rem; margin: 0 0 2rem; }
+
+.why { margin-top: 0.5rem; }
+.why h2 { font-size: 1.75rem; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 1rem; }
+.why-item h3 { font-size: 1.15rem; }
+.why-item p { margin: 0; color: var(--graphite); }
+
+/* Product pages */
+.page { padding-top: 2.5rem; }
+.page-title { font-size: 2.1rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2rem 1.5rem; margin-top: 1.5rem; }
+.product-card { display: flex; flex-direction: column; }
+.product-tile, .detail-tile {
+  display: grid; place-items: center; aspect-ratio: 1; background: var(--tile);
+  border-radius: 8px; font-size: 4rem; margin-bottom: 0.9rem;
+}
+.product-category { margin: 0; font-size: 0.85rem; color: var(--graphite); }
+.product-name { font-size: 1.1rem; margin: 0.15rem 0 0.25rem; }
+.product-name a { text-decoration: none; }
+.product-name a:hover { text-decoration: underline; }
+.product-price { margin: 0 0 0.9rem; font-weight: 600; }
+.product-card .btn { margin-top: auto; align-self: flex-start; }
+
+.detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 3rem; align-items: start; }
+.detail-tile { font-size: 8rem; }
+.detail-price { font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem; }
+.detail-text { color: var(--graphite); max-width: 32rem; }
+.detail-actions { display: flex; align-items: center; gap: 1.25rem; margin-top: 1.5rem; }
+
+/* Cart */
+.cart-list { list-style: none; margin: 1.5rem 0; }
+.cart-item:last-child { border-bottom: none; }
+.cart-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+.cart-item-emoji { font-size: 2rem; width: 3.25rem; height: 3.25rem; display: grid; place-items: center; background: var(--tile); border-radius: 6px; }
+.cart-item-info { flex: 1; }
+.cart-item-info p { margin: 0; }
+.cart-item-name { font-weight: 600; }
+.cart-item-qty { color: var(--graphite); font-size: 0.9rem; }
+.cart-item-total { margin: 0; font-weight: 600; }
+.cart-total { text-align: right; font-size: 1.2rem; }
+.empty { color: var(--graphite); }
+
+.site-footer { border-top: 1px solid var(--rule); padding: 1.5rem 1.25rem; text-align: center; color: var(--graphite); font-size: 0.9rem; }
+.site-footer p { margin: 0; }
+
+@media (max-width: 640px) {
+  .site-nav { gap: 1rem; }
+  .detail { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cart-item { flex-wrap: wrap; }
+}
