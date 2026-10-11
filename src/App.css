@@ -1,0 +1,518 @@
+/* ==========================================================
+   ComponentCorner styles: yellow and green theme
+   NOTE: This CSS was generated with the help of generative AI
+   (Claude, by Anthropic) and reviewed before use. Rules marked
+   "AI-generated" are the ones written specifically by the AI tool.
+   ========================================================== */
+
+/* ---------- Colors (AI-generated palette) ----------
+   Changing a color here changes it everywhere on the site. */
+:root {
+  --green-dark: #1b4d2b;     /* header, footer, headings */
+  --green: #2e7d32;          /* buttons, prices */
+  --green-light: #e3f2d9;    /* soft green panels */
+  --yellow: #ffd93b;         /* accents, hero button, badge */
+  --yellow-dark: #f2c200;    /* hover for yellow buttons */
+  --yellow-light: #fff8d6;   /* page background */
+  --text: #1f2d22;
+  --muted: #55655a;
+  --white: #ffffff;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--yellow-light);
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+/* AI-generated: footer stays at the bottom on short pages */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Shared page wrapper */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.page h1,
+.page h2 {
+  margin: 0 0 2rem;
+  color: var(--green-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Shared green button */
+.primary-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--green);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: var(--green-dark);
+}
+
+/* AI-generated: visible outline for keyboard users on every clickable thing */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--yellow-dark);
+  outline-offset: 2px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;              /* header stays visible while scrolling */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--green-dark);
+  border-bottom: 5px solid var(--yellow);
+}
+
+.logo {
+  color: var(--yellow);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid transparent;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: var(--yellow);
+}
+
+/* AI-generated: NavLink adds the "active" class to the current page's link */
+.nav a.active {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+
+/* ---------- Cart badge ----------
+   AI-generated: the count sits as a small yellow circle overlapping
+   the top-right corner of the cart icon. */
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 1.8rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--green);
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0 0 2rem;
+  color: var(--green-light);
+  font-size: 1.25rem;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  border-radius: 8px;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.hero-button:hover {
+  background: var(--yellow-dark);
+}
+
+/* ---------- Home: Why Shop with Us ---------- */
+.why-us {
+  text-align: center;
+}
+
+.why-intro {
+  max-width: 620px;
+  margin: -1rem auto 2.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.why-item {
+  padding: 1.75rem 1.25rem;
+  border-radius: 12px;
+  background: var(--green-light);
+}
+
+.why-icon {
+  font-size: 2.2rem;
+}
+
+.why-item h3 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--green-dark);
+}
+
+.why-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- Products ---------- */
+/* AI-generated: responsive grid, as many 280px columns as fit */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 1.25rem;
+  border: 2px solid var(--green-light);
+  border-radius: 12px;
+  background: var(--white);
+  text-align: center;
+}
+
+.product-link {
+  color: var(--text);
+}
+
+.product-link:hover h3 {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.4rem;
+  font-size: 1.25rem;
+}
+
+.product-description {
+  flex-grow: 1;                  /* AI-generated: keeps price + button aligned across cards */
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin: 0.75rem 0;
+  color: var(--green);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.add-button {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: var(--yellow-dark);
+}
+
+/* ---------- Product details ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* AI-generated: image on the left, info on the right (stacks on phones) */
+.details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.details-layout img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.details-info h1 {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.details-info .product-price {
+  font-size: 1.6rem;
+}
+
+.details-description {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.added-message {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+/* ---------- Shopping cart ---------- */
+.cart {
+  max-width: 800px;
+}
+
+.cart-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* AI-generated: each item is its own row, info left, button right */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  border-left: 6px solid var(--green);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.cart-item-info h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.cart-item-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.remove-button,
+.clear-button {
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background: #d64532;           /* red stays red so "remove" is clear */
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-button:hover,
+.clear-button:hover {
+  background: #b53526;
+}
+
+.clear-button {
+  background: transparent;
+  border: 2px solid #d64532;
+  color: #d64532;
+}
+
+.clear-button:hover {
+  color: var(--white);
+}
+
+.cart-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 3px solid var(--yellow);
+}
+
+.cart-total {
+  margin: 0;
+  color: var(--green-dark);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.cart-empty {
+  padding: 2.5rem;
+  border: 3px dashed var(--green);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--muted);
+  text-align: center;
+}
+
+.cart-empty p {
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
+}
+
+/* ---------- Not found ---------- */
+.not-found {
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+  background: var(--green-dark);
+  border-top: 5px solid var(--yellow);
+  color: var(--green-light);
+}
+
+.footer-brand {
+  text-align: center;
+}
+
+.footer-brand h3 {
+  margin: 0 0 1rem;
+  color: var(--yellow);
+  font-size: 1.4rem;
+}
+
+.footer-brand p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--green-light);
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+/* ---------- Small screens ---------- */
+/* AI-generated: stack the header, hero, and details page on phones */
+@media (max-width: 700px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .details-layout {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+}
